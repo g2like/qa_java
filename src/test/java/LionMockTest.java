@@ -5,26 +5,27 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionMockTest {
-    @Mock
+
+    @Spy
     Feline feline;
-    String sex = "Самка";
+
 
     @Test
     public void getKittensTest() throws Exception{
-        Lion lion = new Lion(sex,feline);
-        Mockito.when(lion.getKittens()).thenReturn(1);
+        Lion lion = new Lion("Самка",feline);
         Assert.assertEquals(1,lion.getKittens());
+
     }
 
     @Test
     public void getFoodTest() throws Exception{
-        Lion lion = new Lion(sex,feline);
-        Mockito.when(lion.getFood()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Lion lion = new Lion("Самка",feline);
         Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"),lion.getFood());
     }
 

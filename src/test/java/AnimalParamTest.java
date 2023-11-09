@@ -7,12 +7,12 @@ import java.util.List;
 
 @RunWith(Parameterized.class)
 public class AnimalParamTest {
-    private final String ANIMAL_KIND;
-    private final List<String> ANIMAL_LIST;
+    private final String animalKind;
+    private final List<String> animalList;
 
     public AnimalParamTest(String animalKind, List<String> animalList){
-        this.ANIMAL_KIND = animalKind;
-        this.ANIMAL_LIST = animalList;
+        this.animalKind = animalKind;
+        this.animalList = animalList;
     }
 
     @Parameterized.Parameters
@@ -25,6 +25,6 @@ public class AnimalParamTest {
     @Test
     public void getFoodTest() throws Exception {
         Animal animal = new Animal();
-        Assert.assertEquals(ANIMAL_LIST, animal.getFood(ANIMAL_KIND));
+        Assert.assertEquals(animalList, animal.getFood(animalKind));
     }
 }

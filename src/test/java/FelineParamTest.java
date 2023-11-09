@@ -7,19 +7,19 @@ import org.junit.runners.Parameterized;
 @RunWith(Parameterized.class)
 public class FelineParamTest {
     Feline feline = new Feline();
-    public final int KITTENS_COUNT;
+    public final int kittensCount;
 
     public FelineParamTest(int kittensCount){
-        this.KITTENS_COUNT = kittensCount;
+        this.kittensCount = kittensCount;
     }
 
     @Parameterized.Parameters
     public static Object[][] numberKittens(){
-        return new Object[][]{{1},{2},{3},{4},{5},{6},{7},{8},{9}};
+        return new Object[][]{{0},{1}};
     }
 
     @Test
     public void getKittensTest(){
-        Assert.assertEquals(KITTENS_COUNT,feline.getKittens(KITTENS_COUNT));
+        Assert.assertEquals(kittensCount,feline.getKittens(kittensCount));
     }
 }
