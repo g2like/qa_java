@@ -12,7 +12,7 @@ import java.util.List;
 public class LionMockTest {
 
     @Mock
-    Feline feline = new Feline();
+    Feline feline;
     String sex = "Самец";
 
 
